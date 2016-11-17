@@ -52,7 +52,7 @@
     <Compile Include="PersistentDesktopIconsService.Designer.cs">
       <DependentUpon>PersistentDesktopIconsService.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="AppStart\AppStart.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
