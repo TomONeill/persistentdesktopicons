@@ -1,7 +1,7 @@
 # Persistent Desktop Icons
 The service that should have been defaulted in Windows.
 
-<strong>Current version:</strong> 0.0.0.1
+<strong>Current version:</strong> 0.0.1.0
 
 # Download
 Not yet available for the public.

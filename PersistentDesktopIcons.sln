@@ -7,21 +7,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A073C79-7E9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistentDesktopIcons.Service", "src\PersistentDesktopIcons.Service\PersistentDesktopIcons.Service.csproj", "{A6129D11-2964-4BB8-89F6-2A74CF5D9269}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistentDesktopIcons.Common", "src\PersistentDesktopIcons.Common\PersistentDesktopIcons.Common.csproj", "{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Deploy|Any CPU = Deploy|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A6129D11-2964-4BB8-89F6-2A74CF5D9269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A6129D11-2964-4BB8-89F6-2A74CF5D9269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6129D11-2964-4BB8-89F6-2A74CF5D9269}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6129D11-2964-4BB8-89F6-2A74CF5D9269}.Deploy|Any CPU.Build.0 = Debug|Any CPU
 		{A6129D11-2964-4BB8-89F6-2A74CF5D9269}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6129D11-2964-4BB8-89F6-2A74CF5D9269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A6129D11-2964-4BB8-89F6-2A74CF5D9269} = {5A073C79-7E9B-44B6-BC6A-A2000DBC2DA3}
+		{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022} = {5A073C79-7E9B-44B6-BC6A-A2000DBC2DA3}
 	EndGlobalSection
 EndGlobal
