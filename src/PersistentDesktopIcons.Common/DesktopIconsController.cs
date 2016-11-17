@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace PersistentDesktopIcons.Common
 {
-    public class DesktopIconRestoreProcessor : IDisposable
+    public class DesktopIconsController : IDisposable
     {
         private List<DesktopIcon> _cachedIcons;
 

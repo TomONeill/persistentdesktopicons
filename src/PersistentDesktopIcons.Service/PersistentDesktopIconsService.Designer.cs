@@ -1,6 +1,6 @@
 ﻿namespace PersistentDesktopIcons.Service
 {
-    partial class Service1
+    partial class PersistentDesktopIconsService
     {
         /// <summary> 
         /// Required designer variable.
