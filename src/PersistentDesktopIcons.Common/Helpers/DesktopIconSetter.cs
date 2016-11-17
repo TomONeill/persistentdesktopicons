@@ -1,8 +1,6 @@
-﻿using ManagedWinapi.Windows;
-using PersistentDesktopIcons.Common.ManagedWebapi;
+﻿using PersistentDesktopIcons.Common.ManagedWebapi;
 using PersistentDesktopIcons.Common.Models;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace PersistentDesktopIcons.Common.Helpers
 {
