@@ -58,12 +58,6 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ninjacrab.PersistentWindows.Common\Ninjacrab.PersistentWindows.Common.csproj">
-      <Project>{4CC8B3FB-214B-42AB-8AAE-E7DC5E266EF0}</Project>
-      <Name>Ninjacrab.PersistentWindows.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
