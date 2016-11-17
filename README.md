@@ -7,4 +7,4 @@ The service that should have been defaulted in Windows.
 <a href="https://github.com/TomONeill/persistentdesktopicons/releases/download/1.0.0/PersistentDesktopIcons.Installer.msi">Download now.</a>
 
 # What is this all about?
-If you feel like you should not have to organise your desktop icons all the time after turning your monitor off or changing resolution (that includes playing games), then you would definitely appreciate this application. This is a Windows Service application that runs quietly in the background and keeps the state of the positions of your desktop icons. After the screen resolution changes, the service will put back the icons where they were before.
+If you feel like you should not have to reorganise your desktop icons all the time after turning your monitor off or changing resolution (that includes playing games), then you would definitely appreciate this application. This is a Windows Service application that runs quietly in the background and keeps the state of the positions of your desktop icons. After the screen resolution changes, the service will put back the icons where they were before.
