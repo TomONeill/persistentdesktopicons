@@ -1,18 +1,23 @@
 ﻿using ManagedWinapi.Windows;
+using PersistentDesktopIcons.Common.ManagedWebapi;
 using PersistentDesktopIcons.Common.Models;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace PersistentDesktopIcons.Common.Helpers
 {
     internal class DesktopIconSetter
     {
-        public static void SetDesktopIcon(SystemListView desktop, DesktopIcon desktopIcon)
+        public static void SetDesktopIcons(List<string> desktopIconTitles, List<DesktopIcon> cachedDesktopIcons)
         {
-            for (int i = 0; i < desktop.Count; i++)
+            var mainSystemWindow = MainSystemWindowGetter.GetMainSystemWindow();
+            var systemListView = SystemListViewGetter.GetSystemListView(mainSystemWindow);
+
+            for (int i = 0; i < cachedDesktopIcons.Count; i++)
             {
-                if (desktop[i].Title == desktopIcon.Title)
+                if (desktopIconTitles[i] == cachedDesktopIcons[i].Title)
                 {
-                    desktop[i].Position = desktopIcon.Position;
-                    return;
+                    systemListView[i].Position = cachedDesktopIcons[i].Position;
                 }
             }
         }

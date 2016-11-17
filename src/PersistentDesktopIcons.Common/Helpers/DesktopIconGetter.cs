@@ -1,4 +1,4 @@
-﻿using ManagedWinapi.Windows;
+﻿using PersistentDesktopIcons.Common.ManagedWebapi;
 using PersistentDesktopIcons.Common.Models;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,26 +10,27 @@ namespace PersistentDesktopIcons.Common.Helpers
     {
         public static List<DesktopIcon> GetDesktopIcons()
         {
-            var desktop = GetDesktopListView();
+            var mainSystemWindow = MainSystemWindowGetter.GetMainSystemWindow();
+            var systemListView = SystemListViewGetter.GetSystemListView(mainSystemWindow);
 
-            if (desktop == null)
-            {
-                return null;
-            }
-
+            var desktopIconTitles = mainSystemWindow.Content.PropertyList;
             var desktopIcons = new List<DesktopIcon>();
+            const int firstDesktopIcon = 3;
 
-            for (int i = 0; i < desktop.Count; i++)
+            for (var i = firstDesktopIcon; i < desktopIconTitles.Count; i++)
             {
-                if (desktopIcons.Any(d => d.Title == desktop[i].Title))
+                var iconTitle = desktopIconTitles.ElementAt(i).Value;
+
+                if (desktopIcons.Any(d => d.Title == iconTitle))
                 {
-                    Debug.WriteLine($"Duplicate icon name found: '{0}'", desktop[i].Title);
+                    Debug.WriteLine($"Duplicate icon name found: '{0}'", iconTitle);
+                    continue;
                 }
 
                 var desktopIcon = new DesktopIcon
                 {
-                    Title = desktop[i].Title,
-                    Position = desktop[i].Position
+                    Title = iconTitle,
+                    Position = systemListView[i - 3].Position
                 };
 
                 desktopIcons.Add(desktopIcon);
@@ -38,41 +39,18 @@ namespace PersistentDesktopIcons.Common.Helpers
             return desktopIcons;
         }
 
-        public static SystemListView GetDesktopListView()
+        public static List<string> GetDesktopIconTitles()
         {
-            var mainSystemWindow = SystemWindow.FilterToplevelWindows(delegate (SystemWindow systemWindow)
-            {
-                return systemWindow.ClassName == "Progman"
-                    && systemWindow.Title == "Program Manager"
-                    && systemWindow.Process.ProcessName == "explorer";
-            });
+            var mainSystemWindow = MainSystemWindowGetter.GetMainSystemWindow();
+            var desktopIconTitles = mainSystemWindow.Content.PropertyList;
+            const int firstFewNonDesktopIcons = 3;
 
-            if (mainSystemWindow.Length != 1)
+            for (var i = 0; i < firstFewNonDesktopIcons; i++)
             {
-                Debug.WriteLine("Unable to find the desktop.");
-                return null;
+                desktopIconTitles.Remove(desktopIconTitles.ElementAt(i).Key);
             }
 
-            mainSystemWindow = mainSystemWindow[0].FilterDescendantWindows(false, delegate (SystemWindow systemWindow)
-            {
-                return systemWindow.ClassName == "SysListView32"
-                    && systemWindow.Title == "FolderView";
-            });
-
-            if (mainSystemWindow.Length != 1)
-            {
-                Debug.WriteLine("Unable to find the desktop.");
-                return null;
-            }
-
-            var systemListView = SystemListView.FromSystemWindow(mainSystemWindow[0]);
-
-            if (systemListView == null)
-            {
-                Debug.WriteLine("There were no desktop icons.");
-            }
-
-            return systemListView;
+            return desktopIconTitles.Select(t => t.Value).ToList();
         }
     }
 }

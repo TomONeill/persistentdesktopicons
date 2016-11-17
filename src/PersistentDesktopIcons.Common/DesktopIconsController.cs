@@ -1,4 +1,5 @@
-﻿using PersistentDesktopIcons.Common.Helpers;
+﻿using Microsoft.Win32;
+using PersistentDesktopIcons.Common.Helpers;
 using PersistentDesktopIcons.Common.Models;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,22 @@ namespace PersistentDesktopIcons.Common
             thread.IsBackground = true;
             thread.Name = "DesktopIconRestoreProcessor.InternalRun()";
             thread.Start();
+
+            SystemEvents.DisplaySettingsChanging += (s, e) =>
+            {
+                Debug.WriteLine("Display settings is going to change. Caching desktop icon positions...");
+                UpdateCache();
+            };
+
+            SystemEvents.DisplaySettingsChanged += (s, e) =>
+            {
+                Debug.WriteLine("Display settings changed");
+                RestoreDesktopIcons();
+            };
         }
 
         private void InternalRun()
         {
-            UpdateCache();
-
             while (true)
             {
                 Thread.Sleep(1000);
@@ -37,9 +48,9 @@ namespace PersistentDesktopIcons.Common
 
         public void RestoreDesktopIcons()
         {
-            var desktop = DesktopIconGetter.GetDesktopListView();
+            var desktopIconTitles = DesktopIconGetter.GetDesktopIconTitles();
 
-            if (desktop == null)
+            if (desktopIconTitles == null)
             {
                 return;
             }
@@ -50,10 +61,7 @@ namespace PersistentDesktopIcons.Common
                 return;
             }
 
-            foreach (var cachedIcon in _cachedIcons)
-            {
-                DesktopIconSetter.SetDesktopIcon(desktop, cachedIcon);
-            }
+            DesktopIconSetter.SetDesktopIcons(desktopIconTitles, _cachedIcons);
         }
 
         public void Dispose()
