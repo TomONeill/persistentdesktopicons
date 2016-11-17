@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="DesktopIconsController.cs" />
     <Compile Include="Helpers\DesktopIconGetter.cs" />
-    <Compile Include="Helpers\DesktopIconParser.cs" />
     <Compile Include="Helpers\DesktopIconSetter.cs" />
     <Compile Include="Models\DesktopIcon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
