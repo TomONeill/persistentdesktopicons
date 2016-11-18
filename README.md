@@ -3,7 +3,7 @@ A small and lightweight Windows Service that keeps desktop icons from moving whe
 
 <strong>Current version:</strong> 1.0.0
 
-<strong>Note:</strong> Currently, sometimes the icons align all to the left side of the screen. Fix will be up hopefully tonight.
+<strong>Note:</strong> After some research, the service does not seem to be able to find the desktop all the time. Further research will be done in the near future.
 
 # Download
 <a href="https://github.com/TomONeill/persistentdesktopicons/releases/download/1.0.0/PersistentDesktopIcons.Installer.msi">Download the installer now</a>
