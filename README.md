@@ -1,7 +1,7 @@
 # Persistent Desktop Icons
 The silent application that fixes your desktop icons behaviour on resolution changes.
 
-<strong>Current version:</strong> 1.0.1.0
+<strong>Current version:</strong> 2.0
 
 # Download
 <a href="https://github.com/TomONeill/persistentdesktopicons/releases/download/1.0.0/PersistentDesktopIcons.Installer.msi">Download now</a>
