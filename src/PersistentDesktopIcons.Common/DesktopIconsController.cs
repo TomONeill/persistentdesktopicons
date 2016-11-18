@@ -23,7 +23,7 @@ namespace PersistentDesktopIcons.Common
             SystemEvents.DisplaySettingsChanging += (s, e) =>
             {
                 Debug.WriteLine("Display settings are going to change. Caching desktop icon positions...");
-                //UpdateCache();
+                UpdateCache();
             };
 
             SystemEvents.DisplaySettingsChanged += (s, e) =>
@@ -35,8 +35,6 @@ namespace PersistentDesktopIcons.Common
 
         private void InternalRun()
         {
-            UpdateCache();
-
             while (true)
             {
                 Thread.Sleep(1000);
