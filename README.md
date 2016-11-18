@@ -1,5 +1,5 @@
 # Persistent Desktop Icons
-A Windows Service that keeps desktop icons from moving when changing resolution.
+A small and lightweight Windows Service that keeps desktop icons from moving when changing resolution.
 
 <strong>Current version:</strong> 1.0.0.0
 
