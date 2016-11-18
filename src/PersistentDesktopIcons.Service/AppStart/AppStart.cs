@@ -20,7 +20,6 @@ namespace PersistentDesktopIcons.Service
                 new PersistentDesktopIconsService()
             };
             ServiceBase.Run(ServicesToRun);
-
 #endif
         }
     }

@@ -22,8 +22,8 @@ namespace PersistentDesktopIcons.Common
 
             SystemEvents.DisplaySettingsChanging += (s, e) =>
             {
-                Debug.WriteLine("Display settings is going to change. Caching desktop icon positions...");
-                UpdateCache();
+                Debug.WriteLine("Display settings are going to change. Caching desktop icon positions...");
+                //UpdateCache();
             };
 
             SystemEvents.DisplaySettingsChanged += (s, e) =>
@@ -35,6 +35,8 @@ namespace PersistentDesktopIcons.Common
 
         private void InternalRun()
         {
+            UpdateCache();
+
             while (true)
             {
                 Thread.Sleep(1000);
@@ -48,20 +50,13 @@ namespace PersistentDesktopIcons.Common
 
         public void RestoreDesktopIcons()
         {
-            var desktopIconTitles = DesktopIconGetter.GetDesktopIconTitles();
-
-            if (desktopIconTitles == null)
-            {
-                return;
-            }
-
             if (!_cachedIcons.Any())
             {
                 Debug.WriteLine("No desktop icons were cached. Therefore, no icons have been restored.");
                 return;
             }
 
-            DesktopIconSetter.SetDesktopIcons(desktopIconTitles, _cachedIcons);
+            DesktopIconSetter.SetDesktopIcons(_cachedIcons);
         }
 
         public void Dispose()

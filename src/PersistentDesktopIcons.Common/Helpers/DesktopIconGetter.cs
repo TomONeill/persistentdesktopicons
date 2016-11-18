@@ -13,13 +13,12 @@ namespace PersistentDesktopIcons.Common.Helpers
             var mainSystemWindow = MainSystemWindowGetter.GetMainSystemWindow();
             var systemListView = SystemListViewGetter.GetSystemListView(mainSystemWindow);
 
-            var desktopIconTitles = mainSystemWindow.Content.PropertyList;
             var desktopIcons = new List<DesktopIcon>();
-            const int firstDesktopIcon = 3;
 
-            for (var i = firstDesktopIcon; i < desktopIconTitles.Count; i++)
+            for (var i = 0; i < systemListView.Count; i++)
             {
-                var iconTitle = desktopIconTitles.ElementAt(i).Value;
+                var iconTitle = systemListView[i].Title;
+                var iconPosition = systemListView[i].Position;
 
                 if (desktopIcons.Any(d => d.Title == iconTitle))
                 {
@@ -30,27 +29,19 @@ namespace PersistentDesktopIcons.Common.Helpers
                 var desktopIcon = new DesktopIcon
                 {
                     Title = iconTitle,
-                    Position = systemListView[i - 3].Position
+                    Position = iconPosition
                 };
 
                 desktopIcons.Add(desktopIcon);
+                Debug.WriteLine($"Desktop icons: '{0}'. Title: '{1}', pos (x): '{2}', (y) '{3}'",
+                    desktopIcons.Count,
+                    desktopIcon.Title,
+                    desktopIcon.Position.X,
+                    desktopIcon.Position.Y
+                );
             }
 
             return desktopIcons;
-        }
-
-        public static List<string> GetDesktopIconTitles()
-        {
-            var mainSystemWindow = MainSystemWindowGetter.GetMainSystemWindow();
-            var desktopIconTitles = mainSystemWindow.Content.PropertyList;
-            const int firstFewNonDesktopIcons = 3;
-
-            for (var i = 0; i < firstFewNonDesktopIcons; i++)
-            {
-                desktopIconTitles.Remove(desktopIconTitles.ElementAt(i).Key);
-            }
-
-            return desktopIconTitles.Select(t => t.Value).ToList();
         }
     }
 }

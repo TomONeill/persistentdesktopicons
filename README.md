@@ -1,7 +1,7 @@
 # Persistent Desktop Icons
 The service that should have been defaulted in Windows.
 
-<strong>Current version:</strong> 1.0.0.0
+<strong>Current version:</strong> 1.0.1.0
 
 # Download
 <a href="https://github.com/TomONeill/persistentdesktopicons/tree/master/src/PersistentDesktopIcons.Installer/Release/PersistentDesktopIcons.Installer.msi">Download now.</a>
