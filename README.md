@@ -2,6 +2,7 @@
 The silent application that fixes your desktop icons behaviour on resolution changes.
 
 <strong>Current version:</strong> 2.0
+<strong>Note: </strong> This is a work in progress still!
 
 # Download
 <a href="https://github.com/TomONeill/persistentdesktopicons/releases/download/2.0/Persistent.Desktop.Icons.v2.0.zip">Download now</a>
