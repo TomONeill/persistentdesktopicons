@@ -1,7 +1,9 @@
 # Persistent Desktop Icons
 A small and lightweight Windows Service that keeps desktop icons from moving when changing resolution.
 
-<strong>Current version:</strong> 1.0.0.0
+<strong>Current version:</strong> 1.0.0
+
+<strong>Note:</strong> Currently, sometimes the icons align all to the left side of the screen. Fix will be up hopefully tonight.
 
 # Download
 <a href="https://github.com/TomONeill/persistentdesktopicons/releases/download/1.0.0/PersistentDesktopIcons.Installer.msi">Download the installer now</a>
