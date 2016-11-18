@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A073C79-7E9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistentDesktopIcons.Common", "src\PersistentDesktopIcons.Common\PersistentDesktopIcons.Common.csproj", "{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistentDesktopIcons.Forms", "src\PersistentDesktopIcons.Forms\PersistentDesktopIcons.Forms.csproj", "{9ECA2BE8-94A1-4B24-B881-112988EE6829}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistentDesktopIcons.Forms", "src\PersistentDesktopIcons.Forms\PersistentDesktopIcons.Forms.csproj", "{7CA8D629-6124-444B-86AE-4725822E481F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,18 +22,18 @@ Global
 		{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
 		{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9ECA2BE8-94A1-4B24-B881-112988EE6829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9ECA2BE8-94A1-4B24-B881-112988EE6829}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9ECA2BE8-94A1-4B24-B881-112988EE6829}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
-		{9ECA2BE8-94A1-4B24-B881-112988EE6829}.Deploy|Any CPU.Build.0 = Debug|Any CPU
-		{9ECA2BE8-94A1-4B24-B881-112988EE6829}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9ECA2BE8-94A1-4B24-B881-112988EE6829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CA8D629-6124-444B-86AE-4725822E481F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA8D629-6124-444B-86AE-4725822E481F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA8D629-6124-444B-86AE-4725822E481F}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA8D629-6124-444B-86AE-4725822E481F}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{7CA8D629-6124-444B-86AE-4725822E481F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA8D629-6124-444B-86AE-4725822E481F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{119F4BA4-5E8C-4BF6-A2C4-DCE05EF16022} = {5A073C79-7E9B-44B6-BC6A-A2000DBC2DA3}
-		{9ECA2BE8-94A1-4B24-B881-112988EE6829} = {5A073C79-7E9B-44B6-BC6A-A2000DBC2DA3}
+		{7CA8D629-6124-444B-86AE-4725822E481F} = {5A073C79-7E9B-44B6-BC6A-A2000DBC2DA3}
 	EndGlobalSection
 EndGlobal

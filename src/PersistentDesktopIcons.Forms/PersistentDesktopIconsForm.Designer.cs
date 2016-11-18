@@ -1,4 +1,4 @@
-﻿namespace PersistentDesktopIcons.Forms
+namespace PersistentDesktopIcons.Forms
 {
     partial class PersistentDesktopIconsForm
     {
@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            // 
+            // PersistentDesktopIconsForm
+            // 
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Name = "PersistentDesktopIconsForm";
+
         }
 
         #endregion

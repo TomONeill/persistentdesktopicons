@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PersistentDesktopIcons.Forms.Properties
+namespace WindowsFormsApplication1.Properties
 {
 
 

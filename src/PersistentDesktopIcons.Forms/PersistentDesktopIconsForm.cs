@@ -1,4 +1,4 @@
-﻿using Microsoft.Win32;
+using Microsoft.Win32;
 using System.Windows.Forms;
 
 namespace PersistentDesktopIcons.Forms
@@ -12,6 +12,21 @@ namespace PersistentDesktopIcons.Forms
         }
 
         private void Initialize()
+        {
+            LaunchInBackground();
+
+#if !DEBUG
+                StartWithWindows();
+#endif
+        }
+
+        private void LaunchInBackground()
+        {
+            WindowState = FormWindowState.Minimized;
+            ShowInTaskbar = false;
+        }
+
+        private void StartWithWindows()
         {
             var runRegistryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             var registerRegistration = runRegistryKey.GetValue(Application.ProductName);

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PersistentDesktopIcons.Forms.Properties
+namespace WindowsFormsApplication1.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace PersistentDesktopIcons.Forms.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PersistentDesktopIcons.Forms.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WindowsFormsApplication1.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

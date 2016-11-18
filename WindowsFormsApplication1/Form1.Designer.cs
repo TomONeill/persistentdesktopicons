@@ -1,8 +1,8 @@
-﻿namespace PersistentDesktopIcons.Service
+﻿namespace WindowsFormsApplication1
 {
-    partial class PersistentDesktopIconsService
+    partial class Form1
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
@@ -20,18 +20,20 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.ServiceName = "Service1";
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Text = "Form1";
         }
 
         #endregion
     }
 }
+
