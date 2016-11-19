@@ -1,5 +1,5 @@
 ﻿using ManagedWinapi.Windows;
-using System.Diagnostics;
+using PersistentDesktopIcons.Common.Logger;
 
 namespace PersistentDesktopIcons.Common.ManagedWebapi
 {
@@ -11,7 +11,7 @@ namespace PersistentDesktopIcons.Common.ManagedWebapi
 
             if (systemListView == null)
             {
-                Debug.WriteLine("There were no desktop icons.");
+                Log.WriteLine("There were no desktop icons.");
             }
 
             return systemListView;

@@ -61,6 +61,7 @@
     <Compile Include="DesktopIconsController.cs" />
     <Compile Include="Helpers\DesktopIconGetter.cs" />
     <Compile Include="Helpers\DesktopIconSetter.cs" />
+    <Compile Include="Logger\Log.cs" />
     <Compile Include="ManagedWebapi\MainSystemWindowGetter.cs" />
     <Compile Include="ManagedWebapi\SystemListViewGetter.cs" />
     <Compile Include="Models\DesktopIcon.cs" />

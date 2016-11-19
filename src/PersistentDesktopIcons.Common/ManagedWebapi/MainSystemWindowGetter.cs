@@ -1,5 +1,5 @@
 ﻿using ManagedWinapi.Windows;
-using System.Diagnostics;
+using PersistentDesktopIcons.Common.Logger;
 
 namespace PersistentDesktopIcons.Common.ManagedWebapi
 {
@@ -16,7 +16,7 @@ namespace PersistentDesktopIcons.Common.ManagedWebapi
 
             if (mainSystemWindow.Length != 1)
             {
-                Debug.WriteLine("Unable to find the desktop.");
+                Log.WriteLine("Unable to find the desktop.");
 
                 return null;
             }
@@ -29,7 +29,7 @@ namespace PersistentDesktopIcons.Common.ManagedWebapi
 
             if (mainSystemWindow.Length != 1)
             {
-                Debug.WriteLine("Unable to find the desktop.");
+                Log.WriteLine("Unable to find the desktop.");
 
                 return null;
             }

@@ -1,7 +1,7 @@
-﻿using PersistentDesktopIcons.Common.ManagedWebapi;
+﻿using PersistentDesktopIcons.Common.Logger;
+using PersistentDesktopIcons.Common.ManagedWebapi;
 using PersistentDesktopIcons.Common.Models;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace PersistentDesktopIcons.Common.Helpers
@@ -22,7 +22,7 @@ namespace PersistentDesktopIcons.Common.Helpers
 
                 if (desktopIcons.Any(d => d.Title == iconTitle))
                 {
-                    Debug.WriteLine("Duplicate icon name found: '{0}'", iconTitle);
+                    Log.WriteLine("Duplicate icon name found: '{0}'", iconTitle);
 
                     continue;
                 }
@@ -35,7 +35,7 @@ namespace PersistentDesktopIcons.Common.Helpers
 
                 desktopIcons.Add(desktopIcon);
 
-                Debug.WriteLine("Desktop icon count: '{0}'. Current icon Title: '{1}', pos (x): '{2}', pos (y): '{3}'",
+                Log.WriteLine("Desktop icon count: '{0}'. Current icon Title: '{1}', pos (x): '{2}', pos (y): '{3}'",
                     desktopIcons.Count,
                     desktopIcon.Title,
                     desktopIcon.Position.X,

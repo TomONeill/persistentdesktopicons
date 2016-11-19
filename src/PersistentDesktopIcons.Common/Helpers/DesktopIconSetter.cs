@@ -1,7 +1,7 @@
-﻿using PersistentDesktopIcons.Common.ManagedWebapi;
+﻿using PersistentDesktopIcons.Common.Logger;
+using PersistentDesktopIcons.Common.ManagedWebapi;
 using PersistentDesktopIcons.Common.Models;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 
 namespace PersistentDesktopIcons.Common.Helpers
@@ -13,11 +13,11 @@ namespace PersistentDesktopIcons.Common.Helpers
             var mainSystemWindow = MainSystemWindowGetter.GetMainSystemWindow();
             var systemListView = SystemListViewGetter.GetSystemListView(mainSystemWindow);
 
-            Debug.WriteLine("Cached icons: '{0}'", cachedDesktopIcons.Count);
+            Log.WriteLine("Cached icons: '{0}'", cachedDesktopIcons.Count);
 
             for (int i = 0; i < cachedDesktopIcons.Count; i++)
             {
-                Debug.WriteLine("Current icon: '{0}' with position '{1}'. Cached icon: '{2}' with position '{3}'",
+                Log.WriteLine("Current icon: '{0}' with position '{1}'. Cached icon: '{2}' with position '{3}'",
                     systemListView[i].Title,
                     systemListView[i].Position,
                     cachedDesktopIcons[i].Title,
