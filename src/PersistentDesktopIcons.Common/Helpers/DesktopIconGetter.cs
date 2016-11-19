@@ -31,11 +31,10 @@ namespace PersistentDesktopIcons.Common.Helpers
 
                 desktopIcons.Add(desktopIcon);
 
-                Log.WriteLine("Desktop icon count: '{0}'. Current icon Title: '{1}', pos (x): '{2}', pos (y): '{3}'",
+                Log.WriteLine("Desktop icon count: '{0}'. Getting desktop icon '{1}' with positions '{2}'",
                     desktopIcons.Count,
                     desktopIcon.Title,
-                    desktopIcon.Position.X,
-                    desktopIcon.Position.Y
+                    desktopIcon.Position
                 );
             }
 

@@ -21,7 +21,7 @@ namespace PersistentDesktopIcons.Common.Helpers
                 var desktopIcon = systemListView[i];
                 var cachedIcon = GetItemFromCache(cachedDesktopIcons, systemListView[i].Title);
 
-                Log.WriteLine("Current icon: '{0}' with position '{1}'. Cached icon: '{2}' with position '{3}'",
+                Log.WriteLine("Comparing desktop icon '{0}' with positions '{1}' with cached icon '{2}' with positions '{3}'.",
                     desktopIcon.Title,
                     desktopIcon.Position,
                     cachedIcon.Title,
@@ -35,7 +35,7 @@ namespace PersistentDesktopIcons.Common.Helpers
                 }
                 else
                 {
-                    Log.WriteLine("Positions of the desktop icon '{0}' matched with cached icon '{1}'.",
+                    Log.WriteLine("Positions of desktop icon '{0}' matched with cached icon '{1}'.",
                         desktopIcon.Title,
                         cachedIcon.Title
                     );
