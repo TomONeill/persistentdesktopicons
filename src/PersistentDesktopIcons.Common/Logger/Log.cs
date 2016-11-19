@@ -6,37 +6,55 @@ namespace PersistentDesktopIcons.Common.Logger
 {
     public static class Log
     {
-        public static void WriteLine(string log)
+        public static void WriteLine(string message)
         {
 #if DEBUG
-            Debug.WriteLine(log);
+            Debug.WriteLine(message);
 #else
             var logWriter = File.AppendText(AppDomain.CurrentDomain.BaseDirectory + "Log.txt");
 
             using (logWriter)
             {
-                logWriter.WriteLine(log);
+                logWriter.WriteLine(message);
             }
 #endif
         }
 
-        public static void WriteLine(string log, params object[] arg)
+        public static void WriteLine(string format, params object[] args)
         {
 #if DEBUG
-            Debug.WriteLine(log, arg);
+            Debug.WriteLine(format, args);
 #else
             var logWriter = File.AppendText(AppDomain.CurrentDomain.BaseDirectory + "Log.txt");
 
             using (logWriter)
             {
-                logWriter.WriteLine(log, arg);
+                logWriter.WriteLine(format, args);
             }
 #endif
+        }
+
+        public static void ClearIfLargerThan(long maxSizeInBytes)
+        {
+            var logPath = AppDomain.CurrentDomain.BaseDirectory + "Log.txt";
+
+            if (File.Exists(logPath))
+            {
+                var logSize = new FileInfo(logPath).Length;
+
+                if (logSize > maxSizeInBytes)
+                {
+                    Clear();
+                }
+            }
         }
 
         public static void Clear()
         {
-            File.Delete(AppDomain.CurrentDomain.BaseDirectory + "Log.txt");
+            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "Log.txt"))
+            {
+                File.Delete(AppDomain.CurrentDomain.BaseDirectory + "Log.txt");
+            }
         }
     }
 }
