@@ -34,7 +34,7 @@ namespace PersistentDesktopIcons.Common.Logger
 #endif
         }
 
-        public static void ClearIfLargerThan(long maxSizeInBytes)
+        public static void ClearIfLargerThan(long maxSizeInKiloBytes)
         {
             var logPath = AppDomain.CurrentDomain.BaseDirectory + "Log.txt";
 
@@ -42,7 +42,7 @@ namespace PersistentDesktopIcons.Common.Logger
             {
                 var logSize = new FileInfo(logPath).Length;
 
-                if (logSize > maxSizeInBytes)
+                if (logSize > maxSizeInKiloBytes * 1000)
                 {
                     Clear();
                 }
