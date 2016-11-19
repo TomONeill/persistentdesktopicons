@@ -16,7 +16,7 @@ namespace PersistentDesktopIcons.Common
         public void Start()
         {
             Log.Clear();
-            Log.WriteLine("Current run: ", DateTime.Now);
+            Log.WriteLine("Current run: {0}", DateTime.Now);
 
             var thread = new Thread(InternalRun);
             thread.IsBackground = true;
@@ -39,7 +39,7 @@ namespace PersistentDesktopIcons.Common
         {
             Log.WriteLine("Display settings are going to change.");
 
-            UpdateCache();
+            CacheDesktopIcons();
         }
 
         private void AfterDisplaySettingsChanging(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace PersistentDesktopIcons.Common
             RestoreDesktopIcons();
         }
 
-        private void UpdateCache()
+        private void CacheDesktopIcons()
         {
             Log.WriteLine("Caching desktop icon positions...");
 

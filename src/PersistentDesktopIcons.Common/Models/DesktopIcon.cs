@@ -4,7 +4,13 @@ namespace PersistentDesktopIcons.Common.Models
 {
     public class DesktopIcon
     {
-        public string Title { get; set; }
-        public Point Position { get; set; }
+        public DesktopIcon(string title, Point position)
+        {
+            Title = title;
+            Position = position;
+        }
+
+        public string Title { get; }
+        public Point Position { get; }
     }
 }

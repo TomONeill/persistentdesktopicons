@@ -27,11 +27,7 @@ namespace PersistentDesktopIcons.Common.Helpers
                     continue;
                 }
 
-                var desktopIcon = new DesktopIcon
-                {
-                    Title = iconTitle,
-                    Position = iconPosition
-                };
+                var desktopIcon = new DesktopIcon(iconTitle, iconPosition);
 
                 desktopIcons.Add(desktopIcon);
 
