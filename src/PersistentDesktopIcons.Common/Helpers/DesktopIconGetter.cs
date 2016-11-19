@@ -23,6 +23,7 @@ namespace PersistentDesktopIcons.Common.Helpers
                 if (desktopIcons.Any(d => d.Title == iconTitle))
                 {
                     Debug.WriteLine("Duplicate icon name found: '{0}'", iconTitle);
+
                     continue;
                 }
 
