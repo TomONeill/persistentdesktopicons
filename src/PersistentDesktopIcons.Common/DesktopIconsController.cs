@@ -17,7 +17,7 @@ namespace PersistentDesktopIcons.Common
         {
             var thread = new Thread(InternalRun);
             thread.IsBackground = true;
-            thread.Name = "DesktopIconRestoreProcessor.InternalRun()";
+            thread.Name = "DesktopIconsRestoreController.InternalRun()";
             thread.Start();
 
             SystemEvents.DisplaySettingsChanging += BeforeDisplaySettingsChanging;
@@ -44,12 +44,12 @@ namespace PersistentDesktopIcons.Common
             RestoreDesktopIcons();
         }
 
-        public void UpdateCache()
+        private void UpdateCache()
         {
             _cachedIcons = DesktopIconGetter.GetDesktopIcons();
         }
 
-        public void RestoreDesktopIcons()
+        private void RestoreDesktopIcons()
         {
             if (!_cachedIcons.Any())
             {
