@@ -2,7 +2,14 @@
 The silent application that fixes your desktop icons behaviour on resolution changes.
 
 <strong>Current version:</strong> 2.1<br />
-<strong>Note: </strong> Since Windows is not calling the event that registers the resolution change on time, no icons are actually restored. Hopefully I can find out how in a future release.
+<strong>Note: </strong> Since Windows is not calling the event that registers the resolution change on time, no icons are actually restored. Hopefully I can find out how to fix that in a future release.
+
+# Todo
+Currently some work is still required for the application to work:
+<ul>
+  <li>Instead of a cache, write to a file to keep changes from other resolutions.</li>
+  <li>Actually hooking in before the resolution changes (Windows does it too late at the moment).</li>
+</ul>
 
 # Download
 <a href="https://github.com/TomONeill/persistentdesktopicons/releases/download/2.1/Persistent.Desktop.Icons.v2.1.zip">Download now</a>
