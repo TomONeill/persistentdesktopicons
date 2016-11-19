@@ -2,7 +2,11 @@
 The silent application that fixes your desktop icons behaviour on resolution changes.
 
 <strong>Current version:</strong> 2.1a<br />
-<strong>Note: </strong> Only the initial state (so when the application started) is being saved and being restored once you return to the initial resolution. So you're fine if you are using this for playing games (2160 -> 1080p -> 2160p). More coming soon.
+<strong>Note: </strong> The application in it's current state works fine if you are:<br />
+- Using this for playing games (say you're on 2160p and have to go to 1080p for the game and come back to 2160p)<br />
+- Using this when your desktop icons have moved around after turning your monitor off and on.<br />
+AND: not moving any desktop icons around since the application started.<br />
+Expect better support in the future.
 
 # Download
 <a href="https://github.com/TomONeill/persistentdesktopicons/releases/download/v2.1a/Persistent.Desktop.Icons.v2.1a.zip">Download now</a>
