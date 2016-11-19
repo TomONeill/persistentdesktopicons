@@ -32,10 +32,10 @@ namespace PersistentDesktopIcons.Common
 
         private void InternalRun()
         {
+            CacheDesktopIcons();
+
             while (true)
             {
-                CacheDesktopIcons();
-
                 Thread.Sleep(1000);
             }
         }
