@@ -19,7 +19,7 @@ namespace PersistentDesktopIcons.Common
 #if !DEBUG
             Log.ClearIfLargerThan(MaxLogSizeInKiloByte);
 #endif
-            Log.WriteLine("Current run: {0}", DateTime.Now);
+            Log.WriteLine("Persistent Desktop Icons started on: {0}", DateTime.Now);
 
             var thread = new Thread(InternalRun);
             thread.IsBackground = true;
@@ -40,14 +40,14 @@ namespace PersistentDesktopIcons.Common
 
         private void BeforeDisplaySettingsChanging(object sender, EventArgs e)
         {
-            Log.WriteLine("Display settings are going to change.");
+            Log.WriteLine("{0}: Display settings are going to change.", DateTime.Now);
 
             CacheDesktopIcons();
         }
 
         private void AfterDisplaySettingsChanging(object sender, EventArgs e)
         {
-            Log.WriteLine("Display settings have changed");
+            Log.WriteLine("{0}: Display settings have changed.", DateTime.Now);
 
             RestoreDesktopIcons();
         }

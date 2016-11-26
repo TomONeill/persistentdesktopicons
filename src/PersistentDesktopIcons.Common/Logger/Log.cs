@@ -53,7 +53,7 @@ namespace PersistentDesktopIcons.Common.Logger
         {
             if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "Log.txt"))
             {
-                File.Delete(AppDomain.CurrentDomain.BaseDirectory + "Log.txt");
+                File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "Log.txt", string.Empty);
             }
         }
     }

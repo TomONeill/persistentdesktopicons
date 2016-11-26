@@ -14,7 +14,7 @@ namespace PersistentDesktopIcons.Common.Helpers
             var mainSystemWindow = MainSystemWindowGetter.GetMainSystemWindow();
             var systemListView = SystemListViewGetter.GetSystemListView(mainSystemWindow);
 
-            Log.WriteLine("Cached icons count: '{0}'", cachedDesktopIcons.Count);
+            Log.WriteLine("Cached icons: '{0}'.", cachedDesktopIcons.Count);
 
             for (int i = 0; i < systemListView.Count; i++)
             {
@@ -30,15 +30,14 @@ namespace PersistentDesktopIcons.Common.Helpers
 
                 if (!AreActualAndCachedPositionsEqual(desktopIcon.Position, cachedIcon.Position))
                 {
+                    Log.WriteLine("Moving desktop icon '{0}' back to it's original location.", desktopIcon.Title);
+
                     // Use the local variable instead of a reference.
                     systemListView[i].Position = cachedIcon.Position;
                 }
                 else
                 {
-                    Log.WriteLine("Positions of desktop icon '{0}' matched with cached icon '{1}'.",
-                        desktopIcon.Title,
-                        cachedIcon.Title
-                    );
+                    Log.WriteLine("Desktop icon '{0}' has not changed location.", desktopIcon.Title);
                 }
             }
         }
