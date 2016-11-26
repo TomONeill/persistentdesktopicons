@@ -12,12 +12,12 @@ namespace PersistentDesktopIcons.Common
     public class DesktopIconsController : IDisposable
     {
         private List<DesktopIcon> _cachedIcons;
-        private const long MaxLogSize = 1024;
+        private const long MaxLogSizeInKiloByte = 1024;
 
         public void Start()
         {
 #if !DEBUG
-            Log.ClearIfLargerThan(MaxLogSize);
+            Log.ClearIfLargerThan(MaxLogSizeInKiloByte);
 #endif
             Log.WriteLine("Current run: {0}", DateTime.Now);
 
