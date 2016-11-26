@@ -22,7 +22,7 @@ namespace PersistentDesktopIcons.Common.Helpers
 
                 if (desktopIcons.Any(d => d.Title == iconTitle))
                 {
-                    Log.WriteLine("Duplicate icon name found: '{0}'", iconTitle);
+                    Log.WriteLine("Duplicate icon name found: '{0}'.", iconTitle);
 
                     continue;
                 }
@@ -31,7 +31,7 @@ namespace PersistentDesktopIcons.Common.Helpers
 
                 desktopIcons.Add(desktopIcon);
 
-                Log.WriteLine("Desktop icon count: '{0}'. Getting desktop icon '{1}' with positions '{2}'",
+                Log.WriteLine("Desktop icon count: '{0}'. Getting desktop icon '{1}' with positions '{2}'.",
                     desktopIcons.Count,
                     desktopIcon.Title,
                     desktopIcon.Position
