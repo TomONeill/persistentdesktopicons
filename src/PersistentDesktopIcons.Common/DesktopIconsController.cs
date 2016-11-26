@@ -26,26 +26,24 @@ namespace PersistentDesktopIcons.Common
             thread.Name = "DesktopIconsRestoreController.InternalRun()";
             thread.Start();
 
-            //SystemEvents.DisplaySettingsChanging += BeforeDisplaySettingsChanging;
+            SystemEvents.DisplaySettingsChanging += BeforeDisplaySettingsChanging;
             SystemEvents.DisplaySettingsChanged += AfterDisplaySettingsChanging;
         }
 
         private void InternalRun()
         {
-            CacheDesktopIcons();
-
             while (true)
             {
                 Thread.Sleep(1000);
             }
         }
 
-        //private void BeforeDisplaySettingsChanging(object sender, EventArgs e)
-        //{
-        //    Log.WriteLine("Display settings are going to change.");
+        private void BeforeDisplaySettingsChanging(object sender, EventArgs e)
+        {
+            Log.WriteLine("Display settings are going to change.");
 
-        //    CacheDesktopIcons();
-        //}
+            CacheDesktopIcons();
+        }
 
         private void AfterDisplaySettingsChanging(object sender, EventArgs e)
         {
@@ -81,7 +79,7 @@ namespace PersistentDesktopIcons.Common
 
             ClearCache();
 
-            //SystemEvents.DisplaySettingsChanging -= BeforeDisplaySettingsChanging;
+            SystemEvents.DisplaySettingsChanging -= BeforeDisplaySettingsChanging;
             SystemEvents.DisplaySettingsChanged -= AfterDisplaySettingsChanging;
 
             Log.WriteLine("");
