@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 :: BatchGotAdmin
 :-------------------------------------
 REM  --> Check for permissions
@@ -28,7 +28,4 @@ if '%errorlevel%' NEQ '0' (
     CD /D "%~dp0"
 :--------------------------------------
 
-set currentdir="%~dp0
-set applocation="""%currentdir%Persistent Desktop Icons v2.1a.exe""
-
-reg add HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run /v "Persistent Desktop Icons" /t REG_SZ /d %applocation% /f
+reg delete HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run\ /v "Persistent Desktop Icons" /f
