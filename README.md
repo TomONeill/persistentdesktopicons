@@ -8,14 +8,16 @@ The silent application that fixes your desktop icons behaviour on resolution cha
 AND: not moving any desktop icons around since the application started.<br />
 Expect better support in the future.
 
+To run the application with Windows, run the Start with Windows.bat script.<br />
+You can undo this by running the Undo start with Windows.bat script.
+
 # Download
-<a href="https://github.com/TomONeill/persistentdesktopicons/releases/download/v2.1a/Persistent.Desktop.Icons.v2.1a.zip">Download now</a>
+<a href="https://github.com/TomONeill/persistentdesktopicons/releases/download/v2.1a-rerelease/Persistent.Desktop.Icons.v2.1a.zip">Download now</a>
 
 # Todo
 Currently some work is still required for the application to work:
 <ul>
   <li>Keep desktop icon positions of every resolution.</li>
-  <li>Launch app when Windows starts.</li>
 </ul>
 
 # What is this all about?
