@@ -12,7 +12,7 @@ namespace PersistentDesktopIcons.Common
     public class DesktopIconsController : IDisposable
     {
         private List<DesktopIcon> _cachedIcons;
-        private const long MaxLogSizeInKiloByte = 1024;
+        private const long MaxLogSizeInKiloByte = 256;
 
         public void Start()
         {
