@@ -19,7 +19,14 @@ namespace PersistentDesktopIcons.Common.Helpers
             for (int i = 0; i < systemListView.Count; i++)
             {
                 var desktopIcon = systemListView[i];
-                var cachedIcon = GetItemFromCache(cachedDesktopIcons, systemListView[i].Title);
+                var cachedIcon = GetItemFromCache(cachedDesktopIcons, desktopIcon.Title);
+
+                if (cachedIcon == null)
+                {
+                    Log.WriteLine("Icon '{0}' has not been cached. Skipping...", desktopIcon.Title);
+
+                    continue;
+                }
 
                 Log.WriteLine("Comparing desktop icon '{0}' with positions '{1}' with cached icon '{2}' with positions '{3}'.",
                     desktopIcon.Title,
