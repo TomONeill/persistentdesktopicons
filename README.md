@@ -1,7 +1,7 @@
 # Persistent Desktop Icons
 The silent application that fixes your desktop icons behaviour on resolution changes.
 
-<strong>Current version:</strong> 2.1a<br />
+<strong>Current version:</strong> 2.2a<br />
 <strong>Note: </strong> The application in it's current state works fine if you are:<br />
 - Using this for playing games (say you're on 2160p and have to go to 1080p for the game and come back to 2160p)<br />
 - Using this when your desktop icons have moved around after turning your monitor off and on.<br />
@@ -12,7 +12,7 @@ To run the application with Windows, run the Start with Windows.bat script.<br /
 You can undo this by running the Undo start with Windows.bat script.
 
 # Download
-<a href="https://github.com/TomONeill/persistentdesktopicons/releases/download/v2.1a-rerelease/Persistent.Desktop.Icons.v2.1a.zip">Download now</a>
+<a href="https://github.com/TomONeill/persistentdesktopicons/releases/download/v2.2a/Persistent.Desktop.Icons.v2.2a.zip">Download now</a>
 
 # Todo
 Currently some work is still required for the application to work:
