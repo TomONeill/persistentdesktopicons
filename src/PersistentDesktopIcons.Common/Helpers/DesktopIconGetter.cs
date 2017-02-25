@@ -3,22 +3,28 @@ using PersistentDesktopIcons.Common.ManagedWebapi;
 using PersistentDesktopIcons.Common.Models;
 using System.Collections.Generic;
 using System.Linq;
+using ManagedWinapi.Windows;
 
 namespace PersistentDesktopIcons.Common.Helpers
 {
     internal class DesktopIconGetter
     {
-        public static List<DesktopIcon> GetDesktopIcons()
+        private static SystemListView _systemListView;
+
+        public DesktopIconGetter()
         {
             var mainSystemWindow = MainSystemWindowGetter.GetMainSystemWindow();
-            var systemListView = SystemListViewGetter.GetSystemListView(mainSystemWindow);
+            _systemListView = SystemListViewGetter.GetSystemListView(mainSystemWindow);
+        }
 
+        public List<DesktopIcon> GetDesktopIcons()
+        {
             var desktopIcons = new List<DesktopIcon>();
 
-            for (var i = 0; i < systemListView.Count; i++)
+            for (var i = 0; i < _systemListView.Count; i++)
             {
-                var iconTitle = systemListView[i].Title;
-                var iconPosition = systemListView[i].Position;
+                var iconTitle = _systemListView[i].Title;
+                var iconPosition = _systemListView[i].Position;
 
                 if (desktopIcons.Any(d => d.Title == iconTitle))
                 {

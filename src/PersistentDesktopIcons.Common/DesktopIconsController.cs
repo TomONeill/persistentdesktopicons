@@ -12,44 +12,45 @@ namespace PersistentDesktopIcons.Common
     public class DesktopIconsController : IDisposable
     {
         private List<DesktopIcon> _cachedIcons;
-        private const long MaxLogSizeInKiloByte = 256;
+        private const long MaxLogSizeInKiloBytes = 256;
+        private const int IntervalInMilliSeconds = 1000;
 
         public void Start()
         {
 #if !DEBUG
-            Log.ClearIfLargerThan(MaxLogSizeInKiloByte);
+            Log.ClearIfLargerThan(MaxLogSizeInKiloBytes);
 #endif
-            Log.WriteLine("Persistent Desktop Icons started on: {0}", DateTime.Now);
+            Log.WriteLine("Persistent Desktop Icons started.");
 
-            var thread = new Thread(InternalRun);
-            thread.IsBackground = true;
-            thread.Name = "DesktopIconsRestoreController.InternalRun()";
+            var thread = new Thread(InternalRun)
+            {
+                IsBackground = true,
+                Name = "DesktopIconsRestoreController.InternalRun()"
+            };
             thread.Start();
 
-            //SystemEvents.DisplaySettingsChanging += BeforeDisplaySettingsChanging;
+            SystemEvents.DisplaySettingsChanging += BeforeDisplaySettingsChanging;
             SystemEvents.DisplaySettingsChanged += AfterDisplaySettingsChanging;
         }
 
         private void InternalRun()
         {
-            CacheDesktopIcons();
-
             while (true)
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(IntervalInMilliSeconds);
             }
         }
 
-        //private void BeforeDisplaySettingsChanging(object sender, EventArgs e)
-        //{
-        //    Log.WriteLine("{0}: Display settings are going to change.", DateTime.Now);
-
-        //    CacheDesktopIcons();
-        //}
+        private void BeforeDisplaySettingsChanging(object sender, EventArgs e)
+        {
+            Log.WriteLine("Resolution is changing...");
+            
+            CacheDesktopIcons();
+        }
 
         private void AfterDisplaySettingsChanging(object sender, EventArgs e)
         {
-            Log.WriteLine("{0}: Display settings have changed.", DateTime.Now);
+            Log.WriteLine("Resolution has changed.");
 
             RestoreDesktopIcons();
         }
@@ -58,7 +59,11 @@ namespace PersistentDesktopIcons.Common
         {
             Log.WriteLine("Caching desktop icon positions...");
 
-            _cachedIcons = DesktopIconGetter.GetDesktopIcons();
+            var desktopIconGetter = new DesktopIconGetter();
+
+            _cachedIcons = desktopIconGetter.GetDesktopIcons();
+            
+            Log.WriteLine("Cached desktop icon positions.");
         }
 
         private void RestoreDesktopIcons()
@@ -72,7 +77,10 @@ namespace PersistentDesktopIcons.Common
                 return;
             }
 
-            DesktopIconSetter.SetDesktopIcons(_cachedIcons);
+            var desktopIconSetter = new DesktopIconSetter();
+            desktopIconSetter.SetDesktopIcons(_cachedIcons);
+
+            Log.WriteLine("Restored desktop icon positions from cache.");
         }
 
         public void Dispose()
@@ -81,7 +89,7 @@ namespace PersistentDesktopIcons.Common
 
             ClearCache();
 
-            //SystemEvents.DisplaySettingsChanging -= BeforeDisplaySettingsChanging;
+            SystemEvents.DisplaySettingsChanging -= BeforeDisplaySettingsChanging;
             SystemEvents.DisplaySettingsChanged -= AfterDisplaySettingsChanging;
 
             Log.WriteLine("");
@@ -92,6 +100,8 @@ namespace PersistentDesktopIcons.Common
             Log.WriteLine("Clearing cache...");
 
             _cachedIcons = null;
+
+            Log.WriteLine("Cleared cache.");
         }
     }
 }

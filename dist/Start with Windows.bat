@@ -29,6 +29,6 @@ if '%errorlevel%' NEQ '0' (
 :--------------------------------------
 
 set currentdir="%~dp0
-set applocation="""%currentdir%Persistent Desktop Icons v2.2a.exe""
+set applocation="""%currentdir%Persistent Desktop Icons v2.3.exe""
 
 reg add HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run /v "Persistent Desktop Icons" /t REG_SZ /d %applocation% /f

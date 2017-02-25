@@ -23,8 +23,7 @@ namespace PersistentDesktopIcons.Common.ManagedWebapi
 
             mainSystemWindow = mainSystemWindow[0].FilterDescendantWindows(false, delegate (SystemWindow systemWindow)
             {
-                return systemWindow.ClassName == "SysListView32"
-                    && systemWindow.Title == "FolderView";
+                return systemWindow.ClassName == "SysListView32" && systemWindow.Title == "FolderView";
             });
 
             if (mainSystemWindow.Length != 1)

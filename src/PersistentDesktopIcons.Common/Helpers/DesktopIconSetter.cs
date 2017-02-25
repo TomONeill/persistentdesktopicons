@@ -4,21 +4,27 @@ using PersistentDesktopIcons.Common.Models;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using ManagedWinapi.Windows;
 
 namespace PersistentDesktopIcons.Common.Helpers
 {
     internal class DesktopIconSetter
     {
-        public static void SetDesktopIcons(List<DesktopIcon> cachedDesktopIcons)
+        private static SystemListView _systemListView;
+
+        public DesktopIconSetter()
         {
             var mainSystemWindow = MainSystemWindowGetter.GetMainSystemWindow();
-            var systemListView = SystemListViewGetter.GetSystemListView(mainSystemWindow);
+            _systemListView = SystemListViewGetter.GetSystemListView(mainSystemWindow);
+        }
 
+        public void SetDesktopIcons(List<DesktopIcon> cachedDesktopIcons)
+        {
             Log.WriteLine("Cached icons: '{0}'.", cachedDesktopIcons.Count);
 
-            for (int i = 0; i < systemListView.Count; i++)
+            for (int i = 0; i < _systemListView.Count; i++)
             {
-                var desktopIcon = systemListView[i];
+                var desktopIcon = _systemListView[i];
                 var cachedIcon = GetItemFromCache(cachedDesktopIcons, desktopIcon.Title);
 
                 if (cachedIcon == null)
@@ -40,7 +46,7 @@ namespace PersistentDesktopIcons.Common.Helpers
                     Log.WriteLine("Moving desktop icon '{0}' back to it's original location.", desktopIcon.Title);
 
                     // Use the local variable instead of a reference.
-                    systemListView[i].Position = cachedIcon.Position;
+                    _systemListView[i].Position = cachedIcon.Position;
                 }
                 else
                 {

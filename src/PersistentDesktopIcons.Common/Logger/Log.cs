@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 
 namespace PersistentDesktopIcons.Common.Logger
@@ -8,14 +9,15 @@ namespace PersistentDesktopIcons.Common.Logger
     {
         public static void WriteLine(string message)
         {
+            var timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff", CultureInfo.InvariantCulture);
 #if DEBUG
-            Debug.WriteLine(message);
+            Debug.WriteLine("{0}: {1}", timestamp, message);
 #else
             var logWriter = File.AppendText(AppDomain.CurrentDomain.BaseDirectory + "Log.txt");
 
             using (logWriter)
             {
-                logWriter.WriteLine(message);
+                logWriter.WriteLine("{0}: {1}", timestamp, message);
             }
 #endif
         }
